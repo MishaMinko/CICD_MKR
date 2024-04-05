@@ -2,7 +2,7 @@ import re
 import os
 
 def count_words(text):
-    words = re.findall(r'\b\w+\b', text)
+    words = re.findall(r'\b\w{2,}\b', text)
     return len(words)
 
 def count_sentences(text):
