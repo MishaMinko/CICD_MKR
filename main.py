@@ -1,4 +1,5 @@
 import re
+import os
 
 def count_words(text):
     words = re.findall(r'\b\w+\b', text)
@@ -11,6 +12,7 @@ def count_sentences(text):
     return len(sentences)
 
 filename = 'text.txt'
+current_directory = os.path.dirname(os.path.realpath(__file__))
 
 with open(filename, 'r', encoding='utf-8') as file:
     text = file.read()
@@ -18,5 +20,7 @@ with open(filename, 'r', encoding='utf-8') as file:
 words = count_words(text)
 sentences = count_sentences(text)
 
-print("Кількість слів:", words)
-print("Кількість речень:", sentences)
+result = 'result.txt'
+with open(os.path.join(current_directory, result), 'w', encoding='utf-8') as output_file:
+    output_file.write(f"Кількість слів = {words}\n")
+    output_file.write(f"Кількість речень = {sentences}\n")
