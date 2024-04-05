@@ -5,9 +5,7 @@ def count_words(text):
     return len(words)
 
 def count_sentences(text):
-    sentences = text.split('.')
-    sentences += text.split('!')
-    sentences += text.split('?')
+    sentences = re.split(r'[.!?]+', text)
     # видалення пробілів та пустих рядків
     sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
     return len(sentences)
