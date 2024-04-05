@@ -16,3 +16,9 @@ filename = 'text.txt'
 
 with open(filename, 'r', encoding='utf-8') as file:
     text = file.read()
+
+words = count_words(text)
+sentences = count_sentences(text)
+
+print("Кількість слів:", words)
+print("Кількість речень:", sentences)
