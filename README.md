@@ -1,49 +1,49 @@
 # CICD_MKR
 
-Модульна контрольна робота (МКР) з предмету **CI/CD**. Реалізує програму для підрахунку слів і речень у текстовому файлі, покриту юніт-тестами, з автоматично згенерованим HTML-звітом про результати тестування.
+Modular Assessment (MA) for the **CI/CD** course. Implements a program to count words and sentences in a text file, covered by unit tests, with an automatically generated HTML report on the test results.
 
-Проєкт виконано як модульну контрольну роботу з предмету CI/CD — практичне завдання на написання автоматизованих тестів (pytest) та формування звіту про тестування, що є базовим елементом процесу неперервної інтеграції (CI).
+The project was completed as a modular assignment for the CI/CD course—a practical exercise in writing automated tests (pytest) and generating a test report, which is a fundamental element of the continuous integration (CI) process.
 
-## Стек технологій
+## Technology Stack
 
 - **Python**
-- **pytest** — фреймворк для юніт-тестування
-- **pytest-html** — генерація HTML-звіту за результатами тестів
+- **pytest** — unit testing framework
+- **pytest-html** — generating an HTML report based on test results
 
-## Функціонал
+## Functionality
 
-- `count_words(text)` — підрахунок кількості слів у тексті
-- `count_sentences(text)` — підрахунок кількості речень у тексті
-- Читання вхідного тексту з `text.txt`, запис результату підрахунку у `result.txt`
-- Набір параметризованих юніт-тестів для обох функцій
+- `count_words(text)` — counting the number of words in a text
+- `count_sentences(text)` — counting the number of sentences in a text
+- Read the input text from `text.txt` and write the calculation result to `result.txt`
+- A set of parameterized unit tests for both functions
 
-## Структура проєкту
+## Project structure
 
 ```
-main.py                        # основна логіка підрахунку слів/речень
-text.txt                       # вхідний текстовий файл для аналізу
+main.py                        # basic logic behind counting words and sentences
+text.txt                       # input text file for analysis
 tests/
-├── test_count_words.py        # тести для функції count_words
-└── test_count_sentences.py    # тести для функції count_sentences
-report.html                    # згенерований звіт pytest-html
-assets/style.css                # стилі для звіту
-requirements.txt                # залежності проєкту
+├── test_count_words.py        # tests for the count_words function
+└── test_count_sentences.py    # tests for the count_sentences function
+report.html                    # pytest-html report generated
+assets/style.css                # report styles
+requirements.txt                # project dependencies
 ```
 
-## Запуск
+## How to start project
 
-1. Встановіть залежності:
+1. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Запустіть основну програму:
+2. Start main program:
 ```bash
 python main.py
 ```
-Результат підрахунку слів і речень запишеться у `result.txt`.
+The results of the word and sentence count will be saved to `result.txt`.
 
-3. Запустіть тести з генерацією HTML-звіту:
+3. Run the tests that generate an HTML report:
 ```bash
 pytest --html=report.html
 ```
